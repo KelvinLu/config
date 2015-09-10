@@ -31,5 +31,12 @@
   'alt-8': 'pane:show-item-8'
   'alt-9': 'pane:show-item-9'
 
+'ctrl-alt left': 'window:focus-pane-on-left'
+'ctrl-alt right': 'window:focus-pane-on-right'
+'ctrl-alt up': 'window:focus-pane-above'
+'ctrl-alt down': 'window:focus-pane-below'
+'ctrl-alt h': 'pane:split-right'
+'ctrl-alt v': 'pane:split-down'
+
 '.platform-darwin, .platform-win32, .platform-linux':
   'ctrl-;': 'go-to-line:toggle'
