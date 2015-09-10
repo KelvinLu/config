@@ -1,0 +1,35 @@
+'atom-text-editor':
+  'ctrl-left': 'editor:move-to-beginning-of-word'
+  'ctrl-right': 'editor:move-to-end-of-word'
+  'ctrl-shift-left': 'editor:select-to-beginning-of-word'
+  'ctrl-shift-right': 'editor:select-to-end-of-word'
+
+  'alt-up': 'editor:move-line-up'
+  'alt-down': 'editor:move-line-down'
+
+  'ctrl-up': 'core:move-up'
+  'ctrl-down': 'core:move-down'
+
+  'ctrl-shift-up': 'core:select-up'
+  'ctrl-shift-down': 'core:select-down'
+
+  'ctrl-shift-home': 'editor:select-to-first-character-of-line'
+  'ctrl-shift-end': 'editor:select-to-end-of-line'
+
+'atom-workspace atom-text-editor:not([mini])':
+  'alt-w': 'editor:add-selection-above'
+  'alt-s': 'editor:add-selection-below'
+
+'body':
+  'alt-1': 'pane:show-item-1'
+  'alt-2': 'pane:show-item-2'
+  'alt-3': 'pane:show-item-3'
+  'alt-4': 'pane:show-item-4'
+  'alt-5': 'pane:show-item-5'
+  'alt-6': 'pane:show-item-6'
+  'alt-7': 'pane:show-item-7'
+  'alt-8': 'pane:show-item-8'
+  'alt-9': 'pane:show-item-9'
+
+'.platform-darwin, .platform-win32, .platform-linux':
+  'ctrl-;': 'go-to-line:toggle'
