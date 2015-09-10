@@ -1,20 +1,20 @@
 'atom-text-editor':
-  'ctrl-left': 'editor:move-to-beginning-of-word'
-  'ctrl-right': 'editor:move-to-end-of-word'
-  'ctrl-shift-left': 'editor:select-to-beginning-of-word'
-  'ctrl-shift-right': 'editor:select-to-end-of-word'
+  'cmd-left': 'editor:move-to-beginning-of-word'
+  'cmd-right': 'editor:move-to-end-of-word'
+  'cmd-shift-left': 'editor:select-to-beginning-of-word'
+  'cmd-shift-right': 'editor:select-to-end-of-word'
 
   'alt-up': 'editor:move-line-up'
   'alt-down': 'editor:move-line-down'
 
-  'ctrl-up': 'core:move-up'
-  'ctrl-down': 'core:move-down'
+  'cmd-up': 'core:move-up'
+  'cmd-down': 'core:move-down'
 
-  'ctrl-shift-up': 'core:select-up'
-  'ctrl-shift-down': 'core:select-down'
+  'cmd-shift-up': 'core:select-up'
+  'cmd-shift-down': 'core:select-down'
 
-  'ctrl-shift-home': 'editor:select-to-first-character-of-line'
-  'ctrl-shift-end': 'editor:select-to-end-of-line'
+  'cmd-shift-home': 'editor:select-to-first-character-of-line'
+  'cmd-shift-end': 'editor:select-to-end-of-line'
 
 'atom-workspace atom-text-editor:not([mini])':
   'alt-w': 'editor:add-selection-above'
@@ -31,12 +31,12 @@
   'alt-8': 'pane:show-item-8'
   'alt-9': 'pane:show-item-9'
 
-'ctrl-alt left': 'window:focus-pane-on-left'
-'ctrl-alt right': 'window:focus-pane-on-right'
-'ctrl-alt up': 'window:focus-pane-above'
-'ctrl-alt down': 'window:focus-pane-below'
-'ctrl-alt h': 'pane:split-right'
-'ctrl-alt v': 'pane:split-down'
+  'cmd-alt left': 'window:focus-pane-on-left'
+  'cmd-alt right': 'window:focus-pane-on-right'
+  'cmd-alt up': 'window:focus-pane-above'
+  'cmd-alt down': 'window:focus-pane-below'
+  'cmd-alt h': 'pane:split-right'
+  'cmd-alt v': 'pane:split-down'
 
 '.platform-darwin, .platform-win32, .platform-linux':
-  'ctrl-;': 'go-to-line:toggle'
+  'cmd-;': 'go-to-line:toggle'
