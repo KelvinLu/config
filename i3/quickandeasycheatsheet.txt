@@ -1,0 +1,101 @@
+Kelvin's configs:
+
+Navigating between windows and workspaces
+
+Super		1-9			Switch to workspace 1-9
+
+Super		Up/Down/Left/Right	Focus on the window above/below/left/
+					right
+
+
+
+Relocating windows and workspaces
+
+Super		[			Move active workspace to left display
+
+Super		]			Move active workspace to right display
+
+Super	Shift	Up/Down/Left/Right	Move active workspace above/below/left/
+					right
+
+Super	Shift	1-9			Move focused window to workspace 1-9	
+
+Super 		S, W, or E		Switch between stacked window mode, 
+					tabbed window mode, and default window 
+					mode for new children windows
+
+
+
+Creating and closing windows
+
+Super		D			Run dmenu, creates program window
+
+Super		Return			Create terminal window
+
+Super	Shift	Q			Close (quit) focused window
+
+Super		H or V			Set workspace to split horizontally or 
+					vertically when a new window is made
+
+
+
+Mode: resize
+
+Super		R			Enter resize mode
+
+		Escape, Return		Quit resize mode
+
+		Up/Down/Left/Right	In resize mode:
+					Shrink focused window by the top/
+					bottom/left/right edge
+
+	Shift	Up/Down/Left/Right	In resize mode:
+					Expand focused window by the top/
+					bottom/left/right edge
+
+
+
+Mode: spotify
+
+Super		M			Enter spotify mode
+
+		Escape, Return		Quit spotify mode
+
+		Right			In spotify mode:
+					Play next track on Spotify
+
+		Left			In spotify mode:
+					Play previous track on Spotify
+
+		Space			In spotify mode:
+					Toggle play/pause on Spotify	
+
+
+
+Volume control
+
+Super		+/-			Increase/decrase volume by 1%
+
+Super	Shift	+/-			Increase/decrase volume by 20%
+
+Super		0			Mute
+
+
+
+Resizing displays
+
+Super	Shift	N, M			Run display configuration script
+
+
+
+Logging out 
+
+Super	Shift	E			Log out of (exit) session
+
+
+
+i3
+
+Super	Shift	R			Reload i3 inplace
+
+Super	Shift	C			Reload config
