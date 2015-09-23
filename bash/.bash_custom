@@ -1,2 +1,4 @@
 alias ls="ls --color"
 alias ll="ls -l"
+
+eval "$(thefuck --alias)"
