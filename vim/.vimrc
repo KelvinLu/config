@@ -25,6 +25,8 @@ set background=dark
 set t_Co=256
 colorscheme molokai 
 
+set mouse=a
+
 set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
 
 let g:airline#extensions#tabline#enabled=1
@@ -36,15 +38,26 @@ set splitbelow
 let mapleader=","
 
 function! rc:ifmodbnext()
-    if &modifiable | bnext | endif
+    if &modifiable | bn! | endif
 endfunction
 
 function! rc:ifmodbprevious()
-    if &modifiable | bprevious | endif
+    if &modifiable | bp! | endif
 endfunction
 
 function! rc:ifmodbdelete()
-    if &modifiable | enew | bd! # | endif
+    if &modifiable
+        if &modified
+            let l:choice = confirm("Buffer has unwritten changes, write them before closing buffer?", "&Yes\n&No\n&Cancel", 3)
+            if l:choice == 1
+                silent w
+            elseif l:choice == 3
+                return 0
+            endif
+        endif 
+        enew!
+        bd! # 
+    endif
 endfunction
 
 nmap <Leader>n <plug>NERDTreeTabsToggle<CR>
