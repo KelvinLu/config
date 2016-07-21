@@ -12,7 +12,7 @@ call vundle#begin()
     Plugin 'scrooloose/nerdtree'
     Plugin 'jistr/vim-nerdtree-tabs'
     Plugin 'valloric/youcompleteme'
-    Plugin 'nathanaelkane/vim-indent-guides'
+    Plugin 'Yggdroot/indentLine'
     Plugin 'kien/ctrlp.vim'
     Plugin 'bling/vim-airline'
     Plugin 'flazz/vim-colorschemes'
@@ -25,28 +25,42 @@ set background=dark
 set t_Co=256
 colorscheme molokai 
 
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
-let g:indent_guide_start_level=2
-let g:indent_guide_guide_size=1
+set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
 
 let g:airline#extensions#tabline#enabled=1
+set laststatus=2
+
+set splitright
+set splitbelow
 
 let mapleader=","
 
+function! rc:ifmodbnext()
+    if &modifiable | bnext | endif
+endfunction
+
+function! rc:ifmodbprevious()
+    if &modifiable | bprevious | endif
+endfunction
+
+function! rc:ifmodbdelete()
+    if &modifiable | enew | bd! # | endif
+endfunction
+
 nmap <Leader>n <plug>NERDTreeTabsToggle<CR>
 nmap <Leader>p :CtrlP<CR>
-nmap <Leader>. :bnext<CR>
-nmap <Leader>, :bprevious<CR>
-nmap <Leader>q :bp <BAR> bd #<CR>
+nmap <Leader>] :call rc:ifmodbnext()<CR> 
+nmap <Leader>[ :call rc:ifmodbprevious()<CR>
+nmap <Leader>q :call rc:ifmodbdelete()<CR>
 
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
-nmap <Leader>h :vsp<CR>
-nmap <Leader>v :sp<CR>
-nmap <Leader>w :resize +5<CR>
-nmap <Leader>s :resize -5<CR>
+nmap <Leader>h :vnew<CR>:wincmd l<CR>
+nmap <Leader>v :new<CR>:wincmd j<CR>
+nmap <Leader>w :resize -5<CR>
+nmap <Leader>s :resize +5<CR>
 nmap <Leader>a :vertical resize -5<CR>
 nmap <Leader>d :vertical resize +5<CR>
