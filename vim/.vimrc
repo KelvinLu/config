@@ -80,6 +80,9 @@ function! rc:enewnobuflisted()
     setl nobuflisted
 endfunction
 
+noremap <PageUp> <C-u>
+noremap <PageDown> <C-d>
+
 nmap <Leader>. i
 imap <Leader>. <Esc>
 
