@@ -1,7 +1,3 @@
-set number
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
-
 set nocompatible
 filetype off
 
@@ -9,6 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'tpope/vim-fugitive'
+    Plugin 'airblade/vim-gitgutter'
     Plugin 'scrooloose/nerdtree'
     Plugin 'jistr/vim-nerdtree-tabs'
     Plugin 'valloric/youcompleteme'
@@ -16,6 +13,7 @@ call vundle#begin()
     Plugin 'KelvinLu/vim-bbye'
     Plugin 'kien/ctrlp.vim'
     Plugin 'bling/vim-airline'
+    Plugin 'vim-airline/vim-airline-themes'
     Plugin 'flazz/vim-colorschemes'
 call vundle#end()
 
@@ -24,7 +22,11 @@ filetype plugin indent on
 syntax enable
 set background=dark
 set t_Co=256
-colorscheme molokai
+colorscheme wombat256mod
+
+set number
+let &colorcolumn='80,'.join(range(81, 999), ',')
+highlight ColorColumn guibg=#3a3a3a ctermbg=236
 
 set mouse=a
 
@@ -33,11 +35,18 @@ set ignorecase smartcase
 set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
 
 let g:airline#extensions#tabline#enabled=1
+let g:airline_theme='wombat'
+let g:airline_powerline_fonts=1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
 set laststatus=2
 
 set splitright splitbelow
 
 autocmd BufWritePre * %s/\s\+$//e
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
 
 let mapleader=","
 
@@ -70,6 +79,9 @@ function! rc:enewnobuflisted()
     setl buftype=
     setl nobuflisted
 endfunction
+
+nmap <Leader>. i
+imap <Leader>. <Esc>
 
 nmap <Leader>n <plug>NERDTreeTabsToggle<CR>
 nmap <Leader>p :CtrlP<CR>
