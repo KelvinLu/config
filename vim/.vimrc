@@ -24,17 +24,18 @@ filetype plugin indent on
 syntax enable
 set background=dark
 set t_Co=256
-colorscheme molokai 
+colorscheme molokai
 
 set mouse=a
+
+set ignorecase smartcase
 
 set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
 
 let g:airline#extensions#tabline#enabled=1
 set laststatus=2
 
-set splitright
-set splitbelow
+set splitright splitbelow
 
 autocmd BufWritePre * %s/\s\+$//e
 
@@ -72,7 +73,7 @@ endfunction
 
 nmap <Leader>n <plug>NERDTreeTabsToggle<CR>
 nmap <Leader>p :CtrlP<CR>
-nmap <Leader>] :call rc:ifmodbnext()<CR> 
+nmap <Leader>] :call rc:ifmodbnext()<CR>
 nmap <Leader>[ :call rc:ifmodbprevious()<CR>
 nmap <Leader>q :call rc:ifmodbdelete()<CR>
 
