@@ -1,4 +1,7 @@
-alias ls="ls --color"
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
 alias ll="ls -l"
+alias lock="pmset displaysleepnow"
 
 eval "$(thefuck --alias)"
