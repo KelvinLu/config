@@ -15,6 +15,7 @@ call vundle#begin()
     Plugin 'bling/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'flazz/vim-colorschemes'
+    Plugin 'tpope/vim-sleuth'
 call vundle#end()
 
 filetype plugin indent on
@@ -31,8 +32,6 @@ highlight ColorColumn guibg=#3a3a3a ctermbg=236
 set mouse=a
 set backspace=indent,eol,start
 set ignorecase smartcase
-
-set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
 
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='wombat'
