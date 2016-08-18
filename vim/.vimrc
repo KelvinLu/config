@@ -29,6 +29,8 @@ set number
 let &colorcolumn='80,'.join(range(81, 999), ',')
 highlight ColorColumn guibg=#3a3a3a ctermbg=236
 
+set hlsearch
+
 set mouse=a
 set backspace=indent,eol,start
 set ignorecase smartcase
