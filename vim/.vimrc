@@ -93,10 +93,10 @@ nmap <Leader>] :call RCifmodbnext()<CR>
 nmap <Leader>[ :call RCifmodbprevious()<CR>
 nmap <Leader>q :call RCifmodbdelete()<CR>
 
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
+nmap <silent> <Leader><Up> :wincmd k<CR>
+nmap <silent> <Leader><Down> :wincmd j<CR>
+nmap <silent> <Leader><Left> :wincmd h<CR>
+nmap <silent> <Leader><Right> :wincmd l<CR>
 
 nmap <Leader>h :vnew<CR>:wincmd l<CR>:call RCenewnobuflisted()<CR>
 nmap <Leader>v :new<CR>:wincmd j<CR>:call RCenewnobuflisted()<CR>
