@@ -32,7 +32,7 @@ highlight ColorColumn guibg=#3a3a3a ctermbg=236
 set hlsearch
 
 set mouse=a
-
+set backspace=indent,eol,start
 set ignorecase smartcase
 
 let g:airline#extensions#tabline#enabled=1
@@ -51,15 +51,15 @@ autocmd InsertLeave * set nocul
 
 let mapleader=","
 
-function! rc:ifmodbnext()
+function RCifmodbnext()
     if &modifiable | bn! | endif
 endfunction
 
-function! rc:ifmodbprevious()
+function RCifmodbprevious()
     if &modifiable | bp! | endif
 endfunction
 
-function! rc:ifmodbdelete()
+function RCifmodbdelete()
     if &modifiable
         if &modified
             let l:choice = confirm("Buffer has unwritten changes, write them before closing buffer?", "&Yes\n&No\n&Cancel", 3)
@@ -73,7 +73,7 @@ function! rc:ifmodbdelete()
     endif
 endfunction
 
-function! rc:enewnobuflisted()
+function RCenewnobuflisted()
     enew!
     setl noswapfile
     setl bufhidden=wipe
@@ -89,17 +89,17 @@ imap <Leader>. <Esc>
 
 nmap <Leader>n <plug>NERDTreeTabsToggle<CR>
 nmap <Leader>p :CtrlP<CR>
-nmap <Leader>] :call rc:ifmodbnext()<CR>
-nmap <Leader>[ :call rc:ifmodbprevious()<CR>
-nmap <Leader>q :call rc:ifmodbdelete()<CR>
+nmap <Leader>] :call RCifmodbnext()<CR>
+nmap <Leader>[ :call RCifmodbprevious()<CR>
+nmap <Leader>q :call RCifmodbdelete()<CR>
 
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
+nmap <silent> <Leader><Up> :wincmd k<CR>
+nmap <silent> <Leader><Down> :wincmd j<CR>
+nmap <silent> <Leader><Left> :wincmd h<CR>
+nmap <silent> <Leader><Right> :wincmd l<CR>
 
-nmap <Leader>h :vnew<CR>:wincmd l<CR>:call rc:enewnobuflisted()<CR>
-nmap <Leader>v :new<CR>:wincmd j<CR>:call rc:enewnobuflisted()<CR>
+nmap <Leader>h :vnew<CR>:wincmd l<CR>:call RCenewnobuflisted()<CR>
+nmap <Leader>v :new<CR>:wincmd j<CR>:call RCenewnobuflisted()<CR>
 nmap <Leader>w :resize -5<CR>
 nmap <Leader>s :resize +5<CR>
 nmap <Leader>a :vertical resize -5<CR>

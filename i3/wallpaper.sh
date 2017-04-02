@@ -1,7 +1,7 @@
 #!/bin/bash
 
 shopt -s nullglob
-cd ~/.i3/backgrounds
+cd ~/.config/i3/backgrounds
 
 while true; do
     files=()

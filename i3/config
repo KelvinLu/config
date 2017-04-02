@@ -10,12 +10,12 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Autoexec
-exec ~/.i3/autoexec
+exec ~/.config/i3/autoexec
 
 set $mod Mod4
 
 # Open this cheatsheet
-bindcode $mod+61 exec gedit ~/.i3/quickandeasycheatsheet.txt
+bindcode $mod+61 exec gedit ~/.config/i3/quickandeasycheatsheet.txt
 
 focus_follows_mouse no
 
@@ -29,10 +29,6 @@ bindcode $mod+Shift+21 exec "amixer sset PCM 20%+"
 bindcode $mod+Shift+20 exec "amixer sset PCM 20%-"
 bindsym $mod+0 exec "amixer -D pulse set Master toggle"
 bindsym $mod+Shift+0 exec "amixer -D pulse set Master toggle"
-
-# run displays script
-bindsym $mod+Shift+n exec ~/.i3/display1
-bindsym $mod+Shift+m exec ~/.i3/display2
 
 # Color scheme
 # class                 border  backgr. text    indicator
@@ -201,7 +197,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	position top
-        status_command ~/.i3/conky
+        status_command ~/.config/i3/conky
 
     	colors {
 		background #323B38
