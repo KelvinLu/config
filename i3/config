@@ -11,6 +11,7 @@
 
 # Autoexec
 exec ~/.config/i3/autoexec
+exec ~/.config/i3/wallpaper.sh
 
 set $mod Mod4
 
