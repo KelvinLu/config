@@ -1,26 +1,20 @@
 set nocompatible
-filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-    Plugin 'VundleVim/Vundle.vim'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'airblade/vim-gitgutter'
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'jistr/vim-nerdtree-tabs'
-    Plugin 'valloric/youcompleteme'
-    Plugin 'Yggdroot/indentLine'
-    Plugin 'KelvinLu/vim-bbye'
-    Plugin 'kien/ctrlp.vim'
-    Plugin 'bling/vim-airline'
-    Plugin 'vim-airline/vim-airline-themes'
-    Plugin 'flazz/vim-colorschemes'
-    Plugin 'tpope/vim-sleuth'
-call vundle#end()
+call plug#begin()
+    Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'scrooloose/nerdtree'
+    Plug 'jistr/vim-nerdtree-tabs'
+    Plug 'valloric/youcompleteme'
+    Plug 'Yggdroot/indentLine'
+    Plug 'KelvinLu/vim-bbye'
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'bling/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'flazz/vim-colorschemes'
+    Plug 'tpope/vim-sleuth'
+call plug#end()
 
-filetype plugin indent on
-
-syntax enable
 set background=dark
 set t_Co=256
 colorscheme wombat256mod
@@ -37,10 +31,24 @@ set ignorecase smartcase
 
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='wombat'
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=0
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
+
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+
+let g:airline_symbols.linenr = ' line:'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.colnr = ' col:'
+
+let g:airline_symbols.whitespace = '~'
+
+let g:airline_symbols.branch = 'git branch:'
+
 set laststatus=2
 
 set splitright splitbelow
