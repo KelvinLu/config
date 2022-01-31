@@ -1,0 +1,18 @@
+[user]
+name = Kelvin Lu
+email = kelvinlu4@gmail.com
+username = kelvinlu
+
+[core]
+editor = vim
+whitespace = trailing-space,tab-in-ident,space-before-tab
+pager = less
+
+[apply]
+whitespace = fix
+
+[diff]
+tool = vimdiff
+
+[difftool]
+prompt = false

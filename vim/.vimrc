@@ -1,26 +1,20 @@
 set nocompatible
-filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-    Plugin 'VundleVim/Vundle.vim'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'airblade/vim-gitgutter'
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'jistr/vim-nerdtree-tabs'
-    Plugin 'valloric/youcompleteme'
-    Plugin 'Yggdroot/indentLine'
-    Plugin 'KelvinLu/vim-bbye'
-    Plugin 'kien/ctrlp.vim'
-    Plugin 'bling/vim-airline'
-    Plugin 'vim-airline/vim-airline-themes'
-    Plugin 'flazz/vim-colorschemes'
-    Plugin 'tpope/vim-sleuth'
-call vundle#end()
+call plug#begin()
+    Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'scrooloose/nerdtree'
+    Plug 'jistr/vim-nerdtree-tabs'
+    Plug 'valloric/youcompleteme'
+    Plug 'Yggdroot/indentLine'
+    Plug 'KelvinLu/vim-bbye'
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'bling/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'flazz/vim-colorschemes'
+    Plug 'tpope/vim-sleuth'
+call plug#end()
 
-filetype plugin indent on
-
-syntax enable
 set background=dark
 set t_Co=256
 colorscheme wombat256mod
