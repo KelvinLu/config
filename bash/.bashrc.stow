@@ -1,0 +1,5 @@
+function script_if_exists {
+    [[ -s $1 ]] && source $1
+}
+
+script_if_exists ~/.ps1
