@@ -1,0 +1,1 @@
+command -v vim >/dev/null && export EDITOR=`command -v vim`

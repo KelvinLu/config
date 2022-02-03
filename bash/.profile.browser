@@ -1,0 +1,1 @@
+command -v brave >/dev/null && export BROWSER=`command -v brave`

@@ -2,5 +2,7 @@ function script_if_exists {
     [[ -s $1 ]] && source $1
 }
 
-script_if_exists ~/git-completion.bash
 script_if_exists ~/.bashrc
+
+script_if_exists ~/.profile.browser
+script_if_exists ~/.profile.editor
