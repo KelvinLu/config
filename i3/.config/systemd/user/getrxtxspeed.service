@@ -1,0 +1,4 @@
+[Service]
+Type=simple
+ExecStart=%h/.i3/getrxtxspeed-loop 15
+PIDFile=%h/.i3/.getrxtxspeed.pid

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+directory=$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+interval=${1:-"60"}
+
+while true;
+do
+  iface="$(${directory}/getwifiinterface)"
+
+  if [[ -z ${iface} ]]; then
+    echo 'no wifi interface' >&2
+    rm -f "${directory}/.rxspeed.txt" "${directory}/.txspeed.txt"
+    sleep "${interval}"
+  else
+    "${directory}/getrxtxspeed" "${interval}" "${iface}"
+  fi
+done
