@@ -4,3 +4,7 @@ function script_if_exists {
 
 script_if_exists ~/.ps1
 script_if_exists ~/.bash_aliases
+
+script_if_exists ~/git-completion.bash
+script_if_exists ~/pyenv.bashrc
+script_if_exists ~/chruby.bashrc
