@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+directory=$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+num_files=$(find "${directory}" -type f ! -name '.*' | wc -l)
+
+if [[ ${num_files} == 0 ]]; then
+  nitrogen --restore
+else
+  nitrogen --set-zoom-fill --random "${directory}"
+fi
