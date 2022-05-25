@@ -112,3 +112,5 @@ nmap <Leader>w :resize -5<CR>
 nmap <Leader>s :resize +5<CR>
 nmap <Leader>a :vertical resize -5<CR>
 nmap <Leader>d :vertical resize +5<CR>
+
+nmap <Leader>c :call system("xsel -i -b", @")<CR>
