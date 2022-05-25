@@ -26,4 +26,9 @@ export PROMPT_DIRTRIM=3
 . ~/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 
-export PS1="\[${COLOR_YELLOW}\]\u\[${COLOR_NC}\]@\[${COLOR_PURPLE}\]$(hostname | awk 'length > 15{$0=substr($0,0,16)"..."}1')\[${COLOR_NC}\]:\[${COLOR_LIGHT_GREEN}\]\$(pwd)\[${COLOR_LIGHT_BLUE}\]\$(__git_ps1 ' on %s')\n\[${COLOR_NC}\]↪  "
+PS1_USER="\[${COLOR_YELLOW}\]"'\u'"\[${COLOR_NC}\]"
+PS1_HOSTNAME="\[${COLOR_PURPLE}\]""$(hostname | awk 'length > 15{$0=substr($0,0,16)"..."}1')""\[${COLOR_NC}\]"
+PS1_PWD="\[${COLOR_LIGHT_GREEN}\]""$(pwd)""\[${COLOR_NC}\]"
+PS1_GIT="\[${COLOR_LIGHT_BLUE}\]""$(__git_ps1 ' on %s')""\[${COLOR_NC}\]"
+PS1_PROMPT='\n'"\[${COLOR_LIGHT_CYAN}\]""$([ $(id -u) -eq 0 ] && echo '#' || echo '$') > ""\[${COLOR_NC}\]"
+export PS1="${PS1_USER}@${PS1_HOSTNAME}:${PS1_PWD}${PS1_GIT}${PS1_PROMPT}"
