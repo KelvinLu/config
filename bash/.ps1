@@ -27,8 +27,9 @@ export PROMPT_DIRTRIM=3
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 PS1_USER="\[${COLOR_YELLOW}\]"'\u'"\[${COLOR_NC}\]"
-PS1_HOSTNAME="\[${COLOR_PURPLE}\]""$(hostname | awk 'length > 15{$0=substr($0,0,16)"..."}1')""\[${COLOR_NC}\]"
-PS1_PWD="\[${COLOR_LIGHT_GREEN}\]""$(pwd)""\[${COLOR_NC}\]"
-PS1_GIT="\[${COLOR_LIGHT_BLUE}\]""$(__git_ps1 ' on %s')""\[${COLOR_NC}\]"
-PS1_PROMPT='\n'"\[${COLOR_LIGHT_CYAN}\]""$([ $(id -u) -eq 0 ] && echo '#' || echo '$') > ""\[${COLOR_NC}\]"
-export PS1="${PS1_USER}@${PS1_HOSTNAME}:${PS1_PWD}${PS1_GIT}${PS1_PROMPT}"
+PS1_HOSTNAME="\[${COLOR_PURPLE}\]""$(awk 'length > 15{$0=substr($0,0,16)"..."}1' <<< '\H')""\[${COLOR_NC}\]"
+PS1_PWD="\[${COLOR_LIGHT_GREEN}\]"'\w'"\[${COLOR_NC}\]"
+PS1_GIT="\[${COLOR_LIGHT_BLUE}\]""\$(__git_ps1 ' on %s')""\[${COLOR_NC}\]"
+PS1_EXITCODE="\[${COLOR_LIGHT_RED}\]""\$(rc=\$?; [[ \${rc} == 0 ]] || echo ' (exit '"\${rc}"')')""\[${COLOR_NC}\]"
+PS1_PROMPT='\n'"\[${COLOR_LIGHT_CYAN}\]"'\$ > '"\[${COLOR_NC}\]"
+export PS1="${PS1_USER}@${PS1_HOSTNAME}:${PS1_PWD}${PS1_GIT}${PS1_EXITCODE}${PS1_PROMPT}"
