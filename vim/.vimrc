@@ -19,9 +19,12 @@ set background=dark
 set t_Co=256
 colorscheme wombat256mod
 
+highlight Normal ctermbg=none
+highlight Nontext ctermbg=none
+
 set number
-let &colorcolumn='80,'.join(range(81, 999), ',')
-highlight ColorColumn guibg=#3a3a3a ctermbg=236
+let &colorcolumn='81,121'
+highlight ColorColumn ctermbg=234
 
 set hlsearch
 
