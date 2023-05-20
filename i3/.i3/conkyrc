@@ -12,7 +12,7 @@ TEXT
 {"full_text": " ▩ ${cpu}% ♨ ${acpitemp}°C ","color": "\#FF5F3B"},
 {"full_text": " ▤ ${mem}/${memmax} ", "color":"\#20BD32"},
 {"full_text": " ϟ ${battery} ${battery_time} ", "color":"\#FF3DA1"},
-{"full_text": " ⌘ ${if_match "${gw_iface}" != "multiple"}${if_match "${gw_iface}" != "none"}${gw_iface} (${gw_ip}) ↓ ${downspeed ${gw_iface}}/s ↑ ${upspeed ${gw_iface}}/s${endif}${endif}${if_match "${gw_iface}" == "multiple"}multiple network interfaces${endif}${if_match "${gw_iface}" == "none"}no network interface${endif}", "color":"\#00DBC5"},
+{"full_text": " ⌘ ${if_match "${gw_iface}" != "multiple"}${if_match "${gw_iface}" != "none"}${gw_iface} ↓ ${downspeed ${gw_iface}}/s ↑ ${upspeed ${gw_iface}}/s${endif}${endif}${if_match "${gw_iface}" == "multiple"}multiple network interfaces${endif}${if_match "${gw_iface}" == "none"}no network interface${endif} ", "color":"\#00DBC5"},
 {"full_text": " ♫ ${exec ~/.i3/getnowplaying | awk -v len=90 '{ if (length($0) > len) print substr($0, 1, len-3) "..."; else print; }'} ", "color":"\#00E0B0"},
 {"full_text": " ${time %a %d %b %Y} ${time %l:%M %p}", "color": "\#B5B5B5"}
 ],
