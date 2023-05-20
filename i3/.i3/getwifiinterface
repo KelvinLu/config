@@ -1,3 +1,0 @@
-#!/bin/sh
-
-nmcli --fields type,state,device --terse device status | grep -E '^wifi:connected:' | cut -d':' -f3
